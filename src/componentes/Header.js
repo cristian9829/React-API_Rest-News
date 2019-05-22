@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 const Header = (props) =>{
   return(
     <nav>
       <div className="nav-wrapper light-blue darken-3">
-        <a className="brand-logo center">{props.titulo}</a>
+        <h3 className="brand-logo center">{props.titulo}</h3>
       </div>
     </nav>
   )
