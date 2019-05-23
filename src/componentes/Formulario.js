@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class Formulario extends Component{
+  //Ref del checklist de categoria
   categoriaRef = React.createRef();
-
-
+  
   cambiarCategoria = (e) =>{
     e.preventDefault();
-    
     //Enviar por props
     this.props.consultarNoticias(this.categoriaRef.current.value)
-
   }
 
   render(){
@@ -37,6 +36,12 @@ class Formulario extends Component{
       </div>
     )
   }
+}
+
+
+
+Formulario.propTypes = {
+  consultarNoticias: PropTypes.func.isRequired  
 }
 
 export default Formulario;

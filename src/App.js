@@ -33,11 +33,8 @@ class App extends Component {
     return (
       <div className="contenedor-app">
         <Header
-          titulo="Noticias"
+          titulo="Barra de navegacion"
         />
-
-
-
         <div className="container white contenedor-noticias">
           <Formulario
             consultarNoticias = {this.consultarNoticias}
