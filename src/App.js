@@ -4,16 +4,12 @@ import Noticias from './componentes/Noticias';
 import Formulario from './componentes/Formulario';
 
 class App extends Component {
-
   state = {
     noticias: []
   }
-
   componentDidMount() {
-    this.consultarNoticias();
-    
+    this.consultarNoticias(); 
   }
-
   consultarNoticias = (categoria = 'general') =>{
     let url = `https://newsapi.org/v2/top-headlines?country=co&category=${categoria}&apiKey=2913c18359114c5cb4bbadb70b3a600b`
 
@@ -27,8 +23,6 @@ class App extends Component {
       })
     })
   }
-  
-
   render(){
     return (
       <div className="contenedor-app">
