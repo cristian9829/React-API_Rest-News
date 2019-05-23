@@ -1,9 +1,27 @@
 import React, {Component} from 'react';
 
-export default class Noticias extends Component{
-  render(){
-    return(
-      <h1>Noticia sola</h1>
-    )
-  }
+const Noticia = (noticia) =>{
+  const {urlToImage, url, title, description, source} = noticia.noticia
+  console.log(urlToImage)
+  return(
+     <div className="col s12 m6 l4">
+       <div className="card">
+        <div className="card-image">
+          <img src={urlToImage} alt={title} />
+          <span className="card-title">{source.name}</span>
+        </div>
+        <div className="card-content">
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </div>
+        <div className="card-action">
+          <a href={url} target="_blanck" className="waves-effects waves-light btn">
+            Noticia Completa
+          </a>
+        </div>
+       </div>
+     </div>
+  )
 }
+
+export default Noticia;
