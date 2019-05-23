@@ -14,15 +14,14 @@ class App extends Component {
     
   }
 
-  consultarNoticias = () =>{
-    let url = 'https://newsapi.org/v2/top-headlines?country=co&category=general&apiKey=2913c18359114c5cb4bbadb70b3a600b'
-    
+  consultarNoticias = (categoria = 'general') =>{
+    let url = `https://newsapi.org/v2/top-headlines?country=co&category=${categoria}&apiKey=2913c18359114c5cb4bbadb70b3a600b`
+
     fetch(url)
     .then(data =>{
       return data.json()
     })
     .then(data => {
-      console.log(data.articles)
       this.setState({
         noticias: data.articles
       })
@@ -40,7 +39,9 @@ class App extends Component {
 
 
         <div className="container white contenedor-noticias">
-          <Formulario/>
+          <Formulario
+            consultarNoticias = {this.consultarNoticias}
+          />
           <Noticias
             noticias = {this.state.noticias}
           />

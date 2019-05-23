@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 const Noticia = (noticia) =>{
   const {urlToImage, url, title, description, source} = noticia.noticia
-  console.log(urlToImage)
   return(
      <div className="col s12 m6 l4">
        <div className="card">
